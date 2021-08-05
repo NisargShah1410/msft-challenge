@@ -27,8 +27,9 @@ jobs:
         pytest
     - name: Generate Report
       run: |
-        pip install pytest-cov
-        py.test –cov= tests/
+        pip install coverage
+        pytest
+        coverage run -m pytest
     
     - name: Building web app
       uses: azure/appservice-build@v2
