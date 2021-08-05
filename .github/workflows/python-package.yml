@@ -30,6 +30,7 @@ jobs:
         pip install coverage
         pytest
         coverage run -m pytest
+        coverage report -m
     
     - name: Building web app
       uses: azure/appservice-build@v2
