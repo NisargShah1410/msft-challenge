@@ -7,7 +7,7 @@ def add(a,b):
     return a+b;
     
 def test_add():
-    assert add(3,7) == 10
+    assert add(4,7) == 10
     
 def test_capitalize_string():
     assert capitalize_string('test') == 'Test'
