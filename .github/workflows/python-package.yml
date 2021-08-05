@@ -25,7 +25,7 @@ jobs:
       run: |
         pip install pytest
         pip install coverage
-        coverage run -m pytest
+        pytest
         coverage report -m
         coverage html
     
