@@ -28,7 +28,7 @@ jobs:
     - name: Generate Report
       run: |
         pip install coverage
-        coverage run -m unittest
+        coverage run -m pytest
     
     - name: Building web app
       uses: azure/appservice-build@v2
