@@ -42,7 +42,7 @@ jobs:
       - name: Deploy web App using GH Action azure/webapps-deploy
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'samplepythondemo'
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'production'
           publish-profile: ${{ secrets.PYTHON_APP }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
