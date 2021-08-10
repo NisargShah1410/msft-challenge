@@ -31,16 +31,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
       - name: Building web app
         uses: azure/appservice-build@v2
-        with:
-          platform: Python
-          platform-version: 3.8.6
         
       - name: Deploy web App using GH Action azure/webapps-deploy
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'samplepythondemo'
+          slot-name: 'production'
           publish-profile: ${{ secrets.PYTHON_APP }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
