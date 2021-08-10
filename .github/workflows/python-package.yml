@@ -35,10 +35,13 @@ jobs:
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
       - name: Building web app
         uses: azure/appservice-build@v2
-        with:
-          DISABLE_HUGO_BUILD: true
         
       - name: Deploy web App using GH Action azure/webapps-deploy
         uses: azure/webapps-deploy@v2
