@@ -39,4 +39,5 @@ jobs:
         with:
           app-name: 'samplepythondemo'
           publish-profile: ${{ secrets.PYTHON_APP }}
-          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+          package: '.'
+          #package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
